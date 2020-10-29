@@ -1,0 +1,385 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Joshua Akan-Etuk</title>
+    <link href="favicon.png" rel="icon">
+
+	<meta content="Joshua Akan-Etuk" name="title">
+	<meta content="SOFTWARE DEVELOPER" name="description"><!-- Open Graph / Facebook -->
+	<meta content="website" property="og:type">
+	<meta content="https://joshuaakanetuk.com/" property="og:url">
+	<meta content="Joshua Akan-Etuk" property="og:title">
+	<meta content="SOFTWARE DEVELOPER" property="og:description">
+	<meta content="" property="og:image"><!-- Twitter -->
+	<meta content="summary_large_image" property="twitter:card">
+	<meta content="https://joshuaakanetuk.com/" property="twitter:url">
+	<meta content="Joshua Akan-Etuk" property="twitter:title">
+	<meta content="SOFTWARE DEVELOPER" property="twitter:description">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+      @import url("https://rsms.me/inter/inter.css");
+      html {
+        font-family: "Inter", sans-serif;
+      }
+      @supports (font-variation-settings: normal) {
+        html {
+          font-family: "Inter var", sans-serif;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+          margin: 0 auto;
+        background-color: black;
+        font-family: Inter, sans-serif;
+        color: white;
+        height: 100%;
+        width: 100%;
+      }
+      a {
+          color: white;
+          text-decoration: underline;
+      }
+      p {
+          font-size: 14px;
+      }
+      input[type="text"],
+input[type="password"],
+input[type="email"],input[type="submit"] {
+  font-family: inherit, sans-serif;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+  background: black;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 8px;
+  width: 100%;
+  -webkit-appearance: none;
+
+}
+textarea {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 16px;
+  height: 80px;
+  resize: none;
+  overflow: hidden;
+  background: black;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 8px;
+  width: 100%;
+}
+      header {
+        font-weight: 600;
+        font-size: 24px;
+      }
+      #header img {
+        width: 40px;
+
+      }
+      footer {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .rowOfIcons {
+        margin-bottom: 5px;
+
+      }
+      .rowOfIcons a {
+        text-decoration: none;
+
+      }
+      .rowOfIcons i {
+          color: rgb(88, 88, 88);
+          font-size: 24px;
+          transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          
+      }
+      .rowOfIcons i:hover{
+          color: white;
+          font-size: 24px;
+          
+      }
+      #root {
+        width: 100%;
+        height: auto;
+        padding: 20px 20px 0 20px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+
+      #content {
+        width: 100%;
+        height: auto;
+        /* padding: 20px 20px 0 20px; */
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+      }
+      #header {
+          font-size: 36px;
+          font-weight: 200;
+          padding: 20px 20px 20px 0;
+      }
+
+
+      #content section:last-child {
+        margin-bottom: 0;
+      }
+      #about,
+      #projects,
+      #contact {
+        background-color: #121113;
+        padding: 25px 20px;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgb(239, 239, 241);
+        line-height: 20px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #projects {
+        flex-direction: column;
+        
+      }
+
+      .projects  {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+      }
+
+      project {
+        padding: 15px 15px;
+        height: 450px;
+        border-radius: 4px;
+        flex: 2 1 calc(50% - 15px);
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+      }
+
+      .projects project {
+          /* margin-left: 15px; */
+          margin-bottom: 15px;
+      }
+
+      .projectIcon {
+          flex: 4 1;
+          font-size: 72px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .projectName {
+          flex: 2 1;
+          margin-bottom: 10px;
+      }
+
+      .projectLinks {
+        flex: 3 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;   
+        text-align: center; 
+        
+            
+      }
+
+      .projectLinks a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px white solid;
+        border-radius: 4px;
+        flex: 1 1 calc(40% - 15px);
+        transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .projectLinks a:hover {
+        color: black;
+        background-color: white;
+        border: none;
+      }
+
+      .projectLinks a:nth-child(2){
+          margin-top: 10px;
+      }
+
+      #contact header, #projects header {
+        margin-bottom: 20px;
+      }
+
+      #contact input, textarea {
+        margin-bottom: 5px;
+      }
+
+      @media screen and (min-width: 800px) {
+          #root {
+            max-width: 800px;
+          }
+          .projects {
+            flex-direction: column;
+
+          }
+          .projects project:nth-child(even) {
+          margin-left: 0;
+      }
+        project {
+            flex: 1 1;
+            margin-bottom: 15px;
+        }
+        #content {
+          flex-direction: row;
+          max-width: 800px;
+          justify-items: center;
+          flex-wrap: wrap;
+        }
+        #content section:nth-child(even) {
+          margin-left: 15px;
+        }
+        #content section {
+          flex: 2 1 calc(50% - 15px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="root">
+      <section id="header">
+          <img src="logo.png"><span> Joshua Akan-Etuk</span>
+      </section>
+      <section id="content">
+        <section id="about">
+            <header>About Me</header>
+            <p>
+              👨🏿‍💻 Hi, I am Joshua Akan-Etuk! I am a software developer + filmmaker
+              living <i>close</i> to Richmond, Virginia.
+              <br />
+              <br />
+              🏃🏿‍♂️ What makes me different from most is my passions outside of coding
+              and how that drives programming. I love art. I am a designer,
+              filmmaker, streamer and more. Whenever my creative projects need some
+              automation coding is where I turn to.
+              <br />
+              <br />
+              🎨 For example, with art driving my passion for code, I'm working on
+              an app to customize brand content for gamers. It has made me get
+              comfortable with Node.JS, networking, and bootstrapping.
+              <br />
+              <br />
+              📽 Another app I'm working on is a movie diary clone based on the MVP
+              of Letterboxd. I like having ownership over my data, but Letterboxd's
+              API isn't publicly available currently. So, I will be creating a
+              self-hosted app for the API Hack project.
+              <br />
+              <br />
+              🕴🏿 What I feel like makes me stand out is how my need to express
+              myself or solve issues has guided my programming so far.
+              <br />
+              <br />
+              🏢 I love working with others and wouldn’t be able to get anywhere
+              programming without working with other talented people in some way.
+              Imagine with the world without the thousands of mission-critical open
+              source projects.
+              <br />
+              <br />
+              ☁︎ I imagine making programs people need. However, one mind is not
+              enough for sustaining applications that people rely on. I learn faster
+              in a team environment of people more talented than me. That's why I
+              want to be on a team.
+              <br />
+              <br />
+              🙇🏿‍♂️ I would consider myself patient, modest, and creative. Outside of
+              code I make videos for YouTube, stream on Twitch, and write music (for
+              myself).
+            </p>
+
+            <header style="margin-bottom: 10px;">Screenshots</header>
+            <div>Client</div>
+            <img style="width: 100%" src="/1.png">
+            <div>Atomic</div>
+            <img style="width: 100%" src="/2.png">
+            <div>Watched</div>
+            <img style="width: 100%" src="/3.png">
+          </section>
+          <section id="projects">
+            <header>Projects</header>
+            <div class="projects">
+                <project>
+                    <div class="projectIcon">🧪</div>
+                    <div class="projectName">Client <br>Manage clients, projects, documentation and more in one easy to access website
+                        For freelancers and small digital agencies. <br>Built to manage my own freelance business.<br><br>Built with: Node, Postgres, React, Express</div>
+                    <div class="projectLinks">
+                        <a href="https://client.joshuaakanetuk.com/">Live App</a>
+                        <a href="https://github.com/joshuaakanetuk/client">Github</a>
+                    </div>
+                </project>
+                <project>
+                    <div class="projectIcon">⚛️</div>
+                    <div class="projectName"> Atomic<br>Keep a running log of your activities and feelings! For data junkies and folks looking to make changes in their life. <br>Built to track my feelings and random long drives.<br><br>Built with: Node, Postgres, React, Express</div>
+                    <div class="projectLinks">
+                        <a href="https://atomic.joshuaakanetuk.com/">Live App</a>
+                        <a href="https://github.com/joshuaakanetuk/atomic">Github</a>
+                    </div>
+                </project>
+                <project>
+                    <div class="projectIcon">📹</div>
+                    <div class="projectName">Watched<br>Log and track all of the movies you watch. For movie fanatics. <br>Built to track the movies I watch.<br><br>Built with: Vanilla JS</div>
+                    <div class="projectLinks">
+                        <a href="https://joshuaakanetuk.github.io/watched">Live App</a>
+                        <a href="https://github.com/joshuaakanetuk/watched">Github</a>
+                    </div>
+                </project>
+                <project>
+                    <div class="projectIcon">🏠</div>
+                    <div class="projectName">Home<br>Home for my selected work, blog posts, social links, and more!</div>
+                    <div class="projectLinks">
+                        <a href="/">Live App</a>
+                        <a href="https://github.com/joshuaakanetuk/home">Github</a>
+                    </div>
+                </project>
+            </div>
+          </section>
+          <section id="contact">
+            <header>Contact </header>
+            <div class="rowOfIcons">
+                <a href="https://github.com/joshuaakanetuk" target="_blank"><i class="ri-github-fill"></i></a>
+                <a href="https://www.linkedin.com/in/joshuaakanetuk/" target="_blank">  <i class="ri-linkedin-fill"></i></a>
+            </div>
+            <form action="https://formspree.io/f/joshuaakanetuk@gmail.com" method="post">
+            <input type="text" name="name" placeholder="Name"></input>
+            <input type="email" name="_replyto" placeholder="Email"></input>
+            <textarea name="message" placeholder="Message"></textarea>
+            <input type="submit"></input>
+        </form>
+        <span>or email <a href="mailto:joshuaakanetuk@gmail.com" target="_blank">joshuaakanetuk@gmail.com</a></span>
+          </section>
+
+      </section>
+    </main>
+    <footer>
+      <img src="favicon.png" />
+    </footer>
+  </body>
+</html>
