@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Joshua Akan-Etuk</title>
@@ -19,14 +19,6 @@
 
     <style>
       @import url("https://rsms.me/inter/inter.css");
-      html {
-        font-family: "Inter", sans-serif;
-      }
-      @supports (font-variation-settings: normal) {
-        html {
-          font-family: "Inter var", sans-serif;
-        }
-      }
       * {
         box-sizing: border-box;
       }
@@ -34,7 +26,7 @@
       body {
           margin: 0 auto;
         background-color: black;
-        font-family: Inter, sans-serif;
+        font-family: Inter, Arial, Helvetica, sans-serif;
         color: white;
         height: 100%;
         width: 100%;
@@ -49,7 +41,6 @@
       input[type="text"],
 input[type="password"],
 input[type="email"],input[type="submit"] {
-  font-family: inherit, sans-serif;
   font-size: 16px;
   resize: none;
   overflow: hidden;
@@ -165,7 +156,7 @@ textarea {
           flex-wrap: wrap;
       }
 
-      project {
+      .projects section {
         padding: 15px 15px;
         height: 450px;
         border-radius: 4px;
@@ -175,7 +166,7 @@ textarea {
         background-color: black;
       }
 
-      .projects project {
+      .projects section {
           /* margin-left: 15px; */
           margin-bottom: 15px;
       }
@@ -242,10 +233,10 @@ textarea {
             flex-direction: column;
 
           }
-          .projects project:nth-child(even) {
+          .projects section:nth-child(even) {
           margin-left: 0;
       }
-        project {
+      .projects section {
             flex: 1 1;
             margin-bottom: 15px;
         }
@@ -255,10 +246,10 @@ textarea {
           justify-items: center;
           flex-wrap: wrap;
         }
-        #content section:nth-child(even) {
+        #content > section:nth-child(even) {
           margin-left: 15px;
         }
-        #content section {
+        #content >  section {
           flex: 2 1 calc(50% - 15px);
         }
       }
@@ -267,7 +258,7 @@ textarea {
   <body>
     <main id="root">
       <section id="header">
-          <img src="logo.png"><span> Joshua Akan-Etuk</span>
+          <img alt="Logo of Joshua Akan-Etuk" src="logo.png"><span> Joshua Akan-Etuk</span>
       </section>
       <section id="content">
         <section id="about">
@@ -317,16 +308,16 @@ textarea {
 
             <header style="margin-bottom: 10px;">Screenshots</header>
             <div>Client</div>
-            <img style="width: 100%" src="/1.png">
+            <img alt="Screenshot of Client app" style="width: 100%" src="/1.png">
             <div>Atomic</div>
-            <img style="width: 100%" src="/2.png">
+            <img alt="Screenshot of Atomic app" style="width: 100%" src="/2.png">
             <div>Watched</div>
-            <img style="width: 100%" src="/3.png">
+            <img alt="Screenshot of Watched app" style="width: 100%" src="/3.png">
           </section>
           <section id="projects">
             <header>Projects</header>
             <div class="projects">
-                <project>
+                <section>
                     <div class="projectIcon">🧪</div>
                     <div class="projectName">Client <br>Manage clients, projects, documentation and more in one easy to access website
                         For freelancers and small digital agencies. <br>Built to manage my own freelance business.<br><br>Built with: Node, Postgres, React, Express</div>
@@ -334,31 +325,31 @@ textarea {
                         <a href="https://client.joshuaakanetuk.com/">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/client">Github</a>
                     </div>
-                </project>
-                <project>
+                </section>
+                <section>
                     <div class="projectIcon">⚛️</div>
                     <div class="projectName"> Atomic<br>Keep a running log of your activities and feelings! For data junkies and folks looking to make changes in their life. <br>Built to track my feelings and random long drives.<br><br>Built with: Node, Postgres, React, Express</div>
                     <div class="projectLinks">
                         <a href="https://atomic.joshuaakanetuk.com/">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/atomic">Github</a>
                     </div>
-                </project>
-                <project>
+                </section>
+                <section>
                     <div class="projectIcon">📹</div>
                     <div class="projectName">Watched<br>Log and track all of the movies you watch. For movie fanatics. <br>Built to track the movies I watch.<br><br>Built with: Vanilla JS</div>
                     <div class="projectLinks">
                         <a href="https://joshuaakanetuk.github.io/watched">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/watched">Github</a>
                     </div>
-                </project>
-                <project>
+                </section>
+                <section>
                     <div class="projectIcon">🏠</div>
                     <div class="projectName">Home<br>Home for my selected work, blog posts, social links, and more!</div>
                     <div class="projectLinks">
                         <a href="/">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/home">Github</a>
                     </div>
-                </project>
+                </section>
             </div>
           </section>
           <section id="contact">
@@ -368,10 +359,10 @@ textarea {
                 <a href="https://www.linkedin.com/in/joshuaakanetuk/" target="_blank">  <i class="ri-linkedin-fill"></i></a>
             </div>
             <form action="https://formspree.io/f/joshuaakanetuk@gmail.com" method="post">
-            <input type="text" name="name" placeholder="Name"></input>
-            <input type="email" name="_replyto" placeholder="Email"></input>
+            <input type="text" name="name" placeholder="Name"/>
+            <input type="email" name="_replyto" placeholder="Email"/>
             <textarea name="message" placeholder="Message"></textarea>
-            <input type="submit"></input>
+            <input type="submit"/>
         </form>
         <span>or email <a href="mailto:joshuaakanetuk@gmail.com" target="_blank">joshuaakanetuk@gmail.com</a></span>
           </section>
@@ -379,7 +370,7 @@ textarea {
       </section>
     </main>
     <footer>
-      <img src="favicon.png" />
+      <img alt="Logo of Joshua Akan-Etuk" src="favicon.png" />
     </footer>
   </body>
 </html>
