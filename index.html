@@ -1,4 +1,5 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Joshua Akan-Etuk</title>
@@ -127,7 +128,7 @@ textarea {
       }
 
 
-      #content section:last-child {
+      #content div:last-child {
         margin-bottom: 0;
       }
       #about,
@@ -156,7 +157,7 @@ textarea {
           flex-wrap: wrap;
       }
 
-      .projects section {
+      .projects > div {
         padding: 15px 15px;
         height: 450px;
         border-radius: 4px;
@@ -166,7 +167,7 @@ textarea {
         background-color: black;
       }
 
-      .projects section {
+      .projects > div {
           /* margin-left: 15px; */
           margin-bottom: 15px;
       }
@@ -233,10 +234,10 @@ textarea {
             flex-direction: column;
 
           }
-          .projects section:nth-child(even) {
+          .projects > div:nth-child(even) {
           margin-left: 0;
       }
-      .projects section {
+      .projects > div {
             flex: 1 1;
             margin-bottom: 15px;
         }
@@ -246,10 +247,10 @@ textarea {
           justify-items: center;
           flex-wrap: wrap;
         }
-        #content > section:nth-child(even) {
+        #content > div:nth-child(even) {
           margin-left: 15px;
         }
-        #content >  section {
+        #content >  div {
           flex: 2 1 calc(50% - 15px);
         }
       }
@@ -257,13 +258,12 @@ textarea {
   </head>
   <body>
     <main id="root">
-      <section id="header">
-        <h1></h1>
+      <div id="header">
           <img alt="Logo of Joshua Akan-Etuk" src="logo.png"><span> Joshua Akan-Etuk</span>
-      </section>
-      <section id="content">
-        <section id="about">
-          <h1></h1>
+      </div>
+      <div id="content">
+        <div id="about">
+          
             <header>About Me</header>
             <p>
               👨🏿‍💻 Hi, I am Joshua Akan-Etuk! I am a software developer living <i>close</i> to Richmond, Virginia.
@@ -302,12 +302,12 @@ textarea {
             <img alt="Screenshot of Atomic app" style="width: 100%" src="/2.png">
             <div>Watched</div>
             <img alt="Screenshot of Watched app" style="width: 100%" src="/3.png">
-          </section>
-          <section id="projects">
+          </div>
+          <div id="projects">
             <header>Projects</header>
             <div class="projects">
-                <section>
-                  <h1></h1>
+                <div>
+                  
                     <div class="projectIcon">🧪</div>
                     <div class="projectName">Client <br>Manage clients, projects, documentation and more in one easy to access website
                       This app is for freelancers and small digital agencies. <br>Built to manage my own freelance business.<br><br>Built with: Node, Postgres, React, Express</div>
@@ -315,38 +315,38 @@ textarea {
                         <a href="https://client.joshuaakanetuk.com/">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/client">Github</a>
                     </div>
-                </section>
-                <section>
-                  <h1></h1>
+                </div>
+                <div>
+                  
                     <div class="projectIcon">⚛️</div>
                     <div class="projectName"> Atomic<br>Keep a running log of your daily activities and feelings! This app is for data junkies and folks looking to make changes in their life. <br>Built to track my feelings and random errands.<br><br>Built with: Node, Postgres, React, Express</div>
                     <div class="projectLinks">
                         <a href="https://atomic.joshuaakanetuk.com/">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/atomic">Github</a>
                     </div>
-                </section>
-                <section>
-                  <h1></h1>
+                </div>
+                <div>
+                  
                     <div class="projectIcon">📹</div>
                     <div class="projectName">Watched<br>Log and track all of the movies you watch. This app is for movie fanatics. <br>Built to track the movies I watch.<br><br>Built with: Javascript, HTML, CSS</div>
                     <div class="projectLinks">
                         <a href="https://joshuaakanetuk.github.io/watched">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/watched">Github</a>
                     </div>
-                </section>
-                <section>
-                  <h1></h1>
+                </div>
+                <div>
+                  
                     <div class="projectIcon">🏠</div>
                     <div class="projectName">Home<br>Home for my selected work, blog posts, social links, and more!</div>
                     <div class="projectLinks">
                         <a href="/">Live App</a>
                         <a href="https://github.com/joshuaakanetuk/flex">Github</a>
                     </div>
-                </section>
+                </div>
             </div>
-          </section>
-          <section id="contact">
-            <h1></h1>
+          </div>
+          <div id="contact">
+            
             <header>Contact </header>
             <div class="rowOfIcons">
                 <a href="https://github.com/joshuaakanetuk" target="_blank"><i class="ri-github-fill"></i></a>
@@ -359,9 +359,9 @@ textarea {
             <input type="submit"/>
         </form>
         <span>or email <a href="mailto:joshuaakanetuk@gmail.com" target="_blank">joshuaakanetuk@gmail.com</a></span>
-          </section>
+          </div>
 
-      </section>
+      </div>
     </main>
     <footer>
       <img alt="Logo of Joshua Akan-Etuk" src="favicon.png" />
