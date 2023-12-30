@@ -7,7 +7,7 @@ const { title, description } = Astro.props;
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title ?? "Joshua Akan-Etuk"}</title>
-    <link href="/assets/favicon.png" rel="icon" />
+    <link href={import.meta.env.BASE_URL + "favicon.png"} rel="icon" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap"
       rel="stylesheet"
@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
     <meta content="https://joshuaakanetuk.com/" property="og:url" />
     <meta content="Joshua Akan-Etuk" property="og:title" />
     <meta content={description ?? "Product-focused full stack developer."} property="og:description" />
-    <meta content="https://joshuaakanetuk.com/assets/graph.png" property="og:image" /><!-- Twitter -->
+    <meta content={import.meta.env.BASE_URL + "graph.png"} property="og:image" /><!-- Twitter -->
     <meta content="summary_large_image" property="twitter:card" />
     <meta content="https://joshuaakanetuk.com/" property="twitter:url" />
     <meta content="Joshua Akan-Etuk" property="twitter:title" />
