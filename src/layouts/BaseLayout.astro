@@ -14,19 +14,19 @@ const { title, description } = Astro.props;
     />
     <meta content="Joshua Akan-Etuk" name="title" />
     <meta
-      content={description ?? "Product-focused full stack developer."}
+      content={description ?? "Product-focused full stack developer. Available for freelance."}
       name="description"
     />
     <!-- Open Graph / Facebook -->
     <meta content="website" property="og:type" />
     <meta content="https://joshuaakanetuk.com/" property="og:url" />
     <meta content="Joshua Akan-Etuk" property="og:title" />
-    <meta content={description ?? "Product-focused full stack developer."} property="og:description" />
+    <meta content={description ?? "Product-focused full stack developer. Available for freelance."} property="og:description" />
     <meta content={import.meta.env.BASE_URL + "graph.png"} property="og:image" /><!-- Twitter -->
     <meta content="summary_large_image" property="twitter:card" />
     <meta content="https://joshuaakanetuk.com/" property="twitter:url" />
     <meta content="Joshua Akan-Etuk" property="twitter:title" />
-    <meta content={description ?? "Product-focused full stack developer."} property="twitter:description" />
+    <meta content={description ?? "Product-focused full stack developer. Available for freelance."} property="twitter:description" />
   </head>
   <body>
     <slot />
