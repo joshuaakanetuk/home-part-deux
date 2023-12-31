@@ -6,34 +6,44 @@ import ArrowRight from "../svg/arrow-top-right.svg";
 const { name, image, links, description, tags } = Astro.props;
 ---
 
-<div class="product-shell flex flex-col gap-4">
-  <!-- Image -->
+<div class="product-shell flex flex-col gap-8">
+  <!-- Media -->
   <div class="rounded-3xl">
-    <img class="rounded-3xl product-image" alt="Couple eating" src={image} />
+    <video class="rounded-3xl product-image" autoplay muted src={image} />
   </div>
   <!-- Name -->
-  <div class="font-bold text-3xl">{name}</div>
-  <!-- Links -->
-  <div class="font-bold text-3xl flex flex-row items-center gap-3">
-    <Image
-      class:list={["h-6", "w-6", "hover:opacity-70"]}
-      src={ArrowRight}
-      alt="Go to demo"
-    />
-    <a href={links.github} target="_blank">
-      <Image
-        class:list={["h-6", "w-6", "hover:opacity-70"]}
-        src={GithubIcon}
-        alt="Github logo"
-      />
-    </a>
-  </div>
+  <div class="font-bold text-3xl -mt-4">{name}</div>
   <!-- Description -->
-  <div class="font-regular text-md">
+  <div class="font-regular text-md -mt-6">
     {description}
   </div>
+  <!-- Links -->
+  <div class="font-bold text-3xl flex flex-row items-center gap-3">
+    {
+      links.demo && (
+        <a href={links.github} target="_blank">
+          <Image
+            class:list={["h-6", "w-6", "hover:opacity-70"]}
+            src={ArrowRight}
+            alt="Go to demo"
+          />
+        </a>
+      )
+    }
+    {
+      links.github && (
+        <a href={links.github} target="_blank">
+          <Image
+            class:list={["h-6", "w-6", "hover:opacity-70"]}
+            src={GithubIcon}
+            alt="Github logo"
+          />
+        </a>
+      )
+    }
+  </div>
   <!-- Tags -->
-  <div class="font-light text-md">
+  <div class="font-light text-md mb-8">
     <ul>
       {tags.map((tag) => <li>{tag}</li>)}
     </ul>

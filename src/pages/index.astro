@@ -5,10 +5,6 @@ import { PRODUCTS } from "../const";
 
 // Layouts
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-// Welcome to Astro! Everything between these triple-dash code fences
-// is your "component frontmatter". It never runs in the browser.
-console.log("This runs in your terminal, not the browser!");
 ---
 
 <BaseLayout>
@@ -20,6 +16,7 @@ console.log("This runs in your terminal, not the browser!");
         Product-focused full stack developer.
       </div>
       <div class="font-regular text-lg">Typescript/React, Java, Python</div>
+      <div class="font-regular text-lg mt-4">Say Hi! <a class="underline" href="mailto:joshuaakanetuk@gmail.com">joshuaakanetuk@gmail.com</a></div>
     </header>
     <!-- Product -->
     {PRODUCTS.map((product) => <Product {...product} />)}
