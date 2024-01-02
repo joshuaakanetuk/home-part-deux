@@ -1,7 +1,10 @@
 ---
 // Components
+import { Image } from "astro:assets";
 import Product from "../components/product.astro";
 import { PRODUCTS } from "../const";
+
+import Logo from "../../public/logo.png";
 
 // Layouts
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -11,12 +14,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <div class="h-full text-white flex flex-col p-8 md:p-16 lg:p-32 gap-4">
     <!-- Header -->
     <header>
+      <Image width="50" height={50} src={"/logo.png"} alt="LOGO" />
       <div class="font-bold text-3xl">Joshua Akan-Etuk</div>
       <div class="font-regular text-xl">
         Product-focused full stack developer. Available for freelance.
       </div>
-      <div class="font-regular text-lg">Typescript, Node, React, Javascript, Java, Python</div>
-      <div class="font-regular text-lg mt-4">Say Hi! <a class="underline" href="mailto:joshuaakanetuk@gmail.com">joshuaakanetuk@gmail.com</a></div>
+      <div class="font-regular text-lg">
+        Typescript, Node, React, Javascript, Java, Python
+      </div>
+      <div class="font-regular text-lg mt-4">
+        Say Hi! <a class="underline" href="mailto:joshuaakanetuk@gmail.com"
+          >joshuaakanetuk@gmail.com</a>
+      </div>
     </header>
     <!-- Product -->
     {PRODUCTS.map((product) => <Product {...product} />)}
