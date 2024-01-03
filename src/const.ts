@@ -33,7 +33,8 @@ export const PRODUCTS = [
   {
     name: "Clipper",
     image:
-    "https://iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.work/clipper.mp4",    links: {
+      "https://iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.work/clipper.mp4",
+    links: {
       github: "https://github.com/joshuaakanetuk/clipper",
     },
     description:
