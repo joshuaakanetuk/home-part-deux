@@ -31,4 +31,17 @@ const { title, description } = Astro.props;
   <body>
     <slot />
   </body>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      width: 100%;
+      /* height: 100%; */
+      background-color: #181818;
+      font-family: "Satoshi", "sans-serif";
+      font-weight: 100;
+    }
+  </style>
 </html>

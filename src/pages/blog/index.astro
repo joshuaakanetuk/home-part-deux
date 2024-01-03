@@ -1,12 +1,26 @@
-<!doctype html>
-<html lang="en">
-  <head></head>
-  <body>
-    This is a blog page
-    <script
-      defer
-      data-domain="joshuaakanetuk.com"
-      src="https://plausible-analytics-production-1637.up.railway.app/js/script.js"
-    ></script>
-  </body>
-</html>
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = await getCollection("blog");
+---
+
+<BaseLayout>
+  <div class="h-full text-white flex flex-col p-8 md:p-16 lg:p-32 gap-4">
+   <a class="font-bold mb-4" href="/">Home</a>
+    <div>
+      <div class="text-3xl font-bold mb-4">Blog Posts:</div>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a class=" text-lg " href={`/blog/${post.slug}`}>{post.data.title}</a>
+              <div class="text-sm text-gray-400">{new Date(post.data.date).toLocaleDateString(undefined, {month: "long", day: "numeric", year:'numeric'} )}</div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,1 +1,9 @@
-<!-- BLOG GOES HERE -->
+---
+import BaseLayout from "./BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="h-full text-white flex flex-col p-8 md:p-16 lg:p-32 gap-4">
+    <slot />
+  </div>
+</BaseLayout>
