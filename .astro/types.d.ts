@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"how-to-use-google-calendar.md": {
+	id: "how-to-use-google-calendar.md";
+  slug: "how-to-use-google-calendar";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};

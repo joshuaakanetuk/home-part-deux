@@ -1,69 +1,84 @@
 ---
 // import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/footer.astro'
+import Footer from "../components/footer.astro";
+import { Image } from "astro:assets";
+import { SEO } from "astro-seo";
 
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 
-const { title, description } = Astro.props;
+const { title, description, pageType, seoImage, pageURL } = Astro.props;
 ---
 
 <html lang="en">
   <head>
+    <!-- Thanks to kevinzunigacuellar for the OG Image Template -->
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title ?? "Joshua Akan-Etuk"}</title>
     <link href={import.meta.env.BASE_URL + "favicon.png"} rel="icon" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap"
       rel="stylesheet"
     />
-    <meta content="Joshua Akan-Etuk" name="title" />
-    <meta
-      content={description ??
+    <meta content={title ??"Joshua Akan-Etuk"} name="title" />
+    <SEO
+      title={title ?? "Joshua Akan-Etuk"}
+      description={description ??
         "Product-focused full stack developer. Available for freelance."}
-      name="description"
+      openGraph={{
+        basic: {
+          title: title ?? "Joshua Akan-Etuk",
+          type: pageType ?? 'website',
+          image: seoImage ?? import.meta.env.BASE_URL + "graph.png",
+        },
+      }}
+      twitter={{
+        creator: '@ujukauboi',
+        title: title ?? "Joshua Akan-Etuk",
+        description: description ??
+        "Product-focused full stack developer. Available for freelance.",
+        card: "summary_large_image",
+        image: seoImage ?? import.meta.env.BASE_URL + "graph.png",
+        site: '@ujukauboi',
+        imageAlt: "Preview image for" + title,
+      }}
     />
-    <!-- Open Graph / Facebook -->
-    <meta content="website" property="og:type" />
-    <meta content="https://joshuaakanetuk.com/" property="og:url" />
-    <meta content="Joshua Akan-Etuk" property="og:title" />
-    <meta
-      content={description ??
-        "Product-focused full stack developer. Available for freelance."}
-      property="og:description"
-    />
-    <meta
-      content={import.meta.env.BASE_URL + "graph.png"}
-      property="og:image"
-    /><!-- Twitter -->
-    <meta content="summary_large_image" property="twitter:card" />
-    <meta content="https://joshuaakanetuk.com/" property="twitter:url" />
-    <meta content="Joshua Akan-Etuk" property="twitter:title" />
-    <meta
-      content={description ??
-        "Product-focused full stack developer. Available for freelance."}
-      property="twitter:description"
-    />
-  </head>
-  <body>
-    <slot />
+  </head><body>
+    <div class="h-full text-white flex flex-col px-8 md:px-16 lg:px-32 gap-4">
+      <!-- Header -->
+      <header>
+        <nav
+          class="py-8 flex flex-row gap-x-5 font-regular items-center text-lg justify-between"
+        >
+          <a href="/">
+            <Image width={32} height={32} src={"/logo.png"} alt="LOGO" /></a
+          >
+          <a class={currentPath === "blog" ? "font-bold" : ""} href="/blog"
+            >Blog</a
+          >
+        </nav>
+      </header>
+      <slot />
+    </div>
     <script
       defer
       data-domain="joshuaakanetuk.com"
       src="https://plausible-analytics-production-1637.up.railway.app/js/script.js"
     ></script>
     <Footer />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        /* height: 100%; */
+        background-color: #181818;
+        font-family: "Satoshi", "sans-serif";
+        font-weight: 100;
+      }
+    </style>
   </body>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    html,
-    body {
-      width: 100%;
-      /* height: 100%; */
-      background-color: #181818;
-      font-family: "Satoshi", "sans-serif";
-      font-weight: 100;
-    }
-  </style>
 </html>

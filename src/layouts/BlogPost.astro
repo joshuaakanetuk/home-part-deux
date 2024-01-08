@@ -1,9 +1,16 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+
+const { title, description, pageType, seoImage, pageURL } = Astro.props;
 ---
 
-<BaseLayout>
-  <div class="h-full text-white flex flex-col p-8 md:p-16 lg:p-32 gap-4">
+<BaseLayout
+  title={title}
+  description={title}
+  pageType={pageType}
+  seoImage={seoImage}
+>
+  <div>
     <slot />
   </div>
 </BaseLayout>

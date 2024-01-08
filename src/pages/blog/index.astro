@@ -7,17 +7,16 @@ const posts = await getCollection("blog");
 ---
 
 <BaseLayout>
-  <div class="h-full text-white flex flex-col p-8 md:p-16 lg:p-32 gap-4">
-   <a class="font-bold mb-4" href="/">Home</a>
+  <div class="text-white flex flex-col gap-4">
     <div>
       <div class="text-3xl font-bold mb-4">Blog Posts:</div>
-      <ul>
+      <ul class="flex flex-col gap-4">
         {
           posts.map((post) => (
             <li>
               <a class=" text-lg " href={`/blog/${post.slug}`}>{post.data.title}</a>
               <div class="text-sm text-gray-400">{new Date(post.data.date).toLocaleDateString(undefined, {month: "long", day: "numeric", year:'numeric'} )}</div>
-            </li>
+              </li>
           ))
         }
       </ul>
