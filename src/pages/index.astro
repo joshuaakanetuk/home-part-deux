@@ -6,6 +6,16 @@ import { PRODUCTS } from "../const";
 
 // Layouts
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Articles
+const articles = [
+  {
+    title: "Why Joshua Chose Thinkful to Become a Remote Developer",
+    site: "Course Report",
+    url: "https://www.coursereport.com/blog/why-joshua-chose-thinkful-to-become-a-remote-developer",
+    date: "2020-11-11",
+  },
+];
 ---
 
 <BaseLayout>
@@ -28,6 +38,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <!-- Product -->
     {PRODUCTS.map((product) => <Product {...product} />)}
+
+    <!-- Articles -->
+    <div class="mb-4">
+      <div class="text-3xl font-bold mb-4">Featured In</div>
+      <ul class="flex flex-col gap-4">
+      {
+        articles.map((article) => (
+          <li>
+            <a class=" text-lg " href={article.url}>
+              {article.title}
+            </a>
+            <div class="text-sm text-gray-400">
+              {new Date(article.date).toLocaleDateString(undefined, {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </div>
+          </li>
+        ))
+      }
+      </ul>
+    </div>
   </div>
   <!-- Cal floating-popup embed code begins -->
   <script type="text/javascript">

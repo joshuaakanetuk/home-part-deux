@@ -14,9 +14,17 @@ const posts = await getCollection("blog");
         {
           posts.map((post) => (
             <li>
-              <a class=" text-lg " href={`/blog/${post.slug}`}>{post.data.title}</a>
-              <div class="text-sm text-gray-400">{new Date(post.data.date).toLocaleDateString(undefined, {month: "long", day: "numeric", year:'numeric'} )}</div>
-              </li>
+              <a class=" text-lg " href={`/blog/${post.slug}`}>
+                {post.data.title}
+              </a>
+              <div class="text-sm text-gray-400">
+                {new Date(post.data.date).toLocaleDateString(undefined, {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </div>
+            </li>
           ))
         }
       </ul>
