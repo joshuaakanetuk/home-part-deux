@@ -175,6 +175,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"create-shopify-themes-with-figma.md": {
+	id: "create-shopify-themes-with-figma.md";
+  slug: "create-shopify-themes-with-figma";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "hello-world.md": {
 	id: "hello-world.md";
   slug: "hello-world";
@@ -182,9 +189,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"how-to-use-google-calendar-py.md": {
+	id: "how-to-use-google-calendar-py.md";
+  slug: "how-to-use-google-calendar-py";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "how-to-use-google-calendar.md": {
 	id: "how-to-use-google-calendar.md";
   slug: "how-to-use-google-calendar";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"how-to-use-open-ai-api-nodejs.md": {
+	id: "how-to-use-open-ai-api-nodejs.md";
+  slug: "how-to-use-open-ai-api-nodejs";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
