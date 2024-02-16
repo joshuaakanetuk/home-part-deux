@@ -23,7 +23,7 @@ const post: CollectionEntry<'blog'> = Astro.props.post;
 const { Content,  } = await post.render();
 ---
 
-<BlogPost title={post.data.title} pageType="article" seoImage={`/og/${post.slug}.png`}>
+<BlogPost title={post.data.title} publishedTime={post.data.date.toISOString()} tags={post.data.tags} pageType="article" author={post.data.author} seoImage={`/og/${post.slug}.png`}>
     <div class="">
         <article class="prose dark:prose-invert max-w-none">
             <div class="text-3xl font-bold mb-4">{post.data.title}</div>
