@@ -17,6 +17,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CONTENT_KEY_API: ${{ secrets.CONTENT_KEY_API }}
+      GHOST_CMS_URL: ${{ vars.GHOST_CMS_URL }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
