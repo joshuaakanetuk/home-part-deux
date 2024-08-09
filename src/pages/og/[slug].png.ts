@@ -2,6 +2,7 @@ import satori from "satori";
 import { html } from "satori-html";
 import { Resvg } from "@resvg/resvg-js";
 import { getCollection } from "astro:content";
+import { ghostClient } from "../../lib/ghost";
 import type { APIContext } from "astro";
 import { readFile } from "node:fs/promises";
 
@@ -83,15 +84,23 @@ export async function GET(context: APIContext) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await ghostClient.posts
+    .browse({
+      limit: "all",
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
+
   const paths = posts.map((post) => {
     return {
       params: {
         slug: post.slug,
       },
       props: {
-        title: post.data.title,
-        pubDate: post.data.date,
+        title: post.title,
+        pubDate: new Date(post.published_at),
       },
     };
   });

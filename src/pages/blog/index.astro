@@ -3,7 +3,14 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const posts = await getCollection("blog");
+import { ghostClient } from '../../lib/ghost';
+const posts = await ghostClient.posts
+    .browse({
+        limit: 'all',
+    })
+    .catch((err) => {
+        console.error(err);
+    });
 ---
 
 <BaseLayout>
@@ -15,10 +22,10 @@ const posts = await getCollection("blog");
           posts.map((post) => (
             <li>
               <a class=" text-lg " href={`/blog/${post.slug}`}>
-                {post.data.title}
+                {post.title}
               </a>
               <div class="text-sm text-gray-400">
-                {new Date(post.data.date).toLocaleDateString(undefined, {
+                {new Date(post.published_at).toLocaleDateString(undefined, {
                   month: "long",
                   day: "numeric",
                   year: "numeric",

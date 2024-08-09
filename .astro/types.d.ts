@@ -189,6 +189,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"how-to-create-api-with-python.md": {
+	id: "how-to-create-api-with-python.md";
+  slug: "how-to-create-api-with-python";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "how-to-use-google-calendar-py.md": {
 	id: "how-to-use-google-calendar-py.md";
   slug: "how-to-use-google-calendar-py";
@@ -206,6 +213,13 @@ declare module 'astro:content' {
 "how-to-use-open-ai-api-nodejs.md": {
 	id: "how-to-use-open-ai-api-nodejs.md";
   slug: "how-to-use-open-ai-api-nodejs";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"ios-18-send-later.md": {
+	id: "ios-18-send-later.md";
+  slug: "ios-18-send-later";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

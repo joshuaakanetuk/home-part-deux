@@ -1,33 +1,46 @@
 ---
 import BlogPost from "../../layouts/BlogPost.astro";
 
-
 import type { GetStaticPaths } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { ghostClient } from "../../lib/ghost";
 
 export async function getStaticPaths() {
-    const posts = await getCollection('blog');
+  const posts = await ghostClient.posts
+    .browse({
+      limit: "all",
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 
-    return posts.map((post) => ({
-        params: {
-            slug: post.slug
-        },
-        props: {
-            post
-        },
-    }))
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: {
+      post,
+    },
+  }));
 }
 
-const post: CollectionEntry<'blog'> = Astro.props.post;
+const post = Astro.props.post;
 
-const { Content,  } = await post.render();
+const Content = await post.html;
 ---
 
-<BlogPost title={post.data.title} publishedTime={post.data.date.toISOString()} tags={post.data.tags} pageType="article" author={post.data.author} seoImage={`/og/${post.slug}.png`}>
-    <div class="">
-        <article class="prose dark:prose-invert max-w-none">
-            <div class="text-3xl font-bold mb-4">{post.data.title}</div>
-            <Content />
-        </article>
-    </div>
+<BlogPost
+  title={post.title}
+  publishedTime={post.published_at}
+  tags={post.tags}
+  pageType="article"
+  author={post.author}
+  seoImage={`/og/${post.slug}.png`}
+>
+  <div class="">
+    <article class="prose dark:prose-invert max-w-none">
+      <div class="text-3xl font-bold mb-4">{post.title}</div>
+      <Fragment set:html={post.html} />
+    </article>
+  </div>
 </BlogPost>
