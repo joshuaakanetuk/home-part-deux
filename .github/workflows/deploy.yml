@@ -1,8 +1,5 @@
 name: Deploy to GitHub Pages
 
-env:
-  CONTENT_KEY_API: ${{ secrets.CONTENT_KEY_API }}
-  GHOST_CMS_URL: ${{ vars.GHOST_CMS_URL }}
 on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
@@ -21,10 +18,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug
+        run: |
+          echo "GHOST_CMS_URL: ${{ vars.GHOST_CMS_URL }}"
+          echo "CONTENT_KEY_API is set: ${{ secrets.CONTENT_KEY_API != '' }}"
       - name: Checkout your repository using git
         uses: actions/checkout@v3
       - name: Install, build, and upload your site
         uses: withastro/action@v1
+        env:
+          GHOST_CMS_URL: ${{ vars.GHOST_CMS_URL }}
+          CONTENT_KEY_API: ${{ secrets.CONTENT_KEY_API }}
+          
         # with:
           # path: . # The root location of your Astro project inside the repository. (optional)
           # node-version: 18 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
