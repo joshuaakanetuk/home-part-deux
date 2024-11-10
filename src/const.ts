@@ -38,7 +38,7 @@ export const PRODUCTS = [
       github: "https://github.com/joshuaakanetuk/clipper",
     },
     description:
-      "A Chrome extension boilerplated with Jonghakseo/chrome-extension-boilerplate-react-vite",
+      "A Chrome extension boilerplated with Jonghakseo/chrome-extension-boilerplate-react-vite.s",
     tags: [
       "Typescript",
       "React",
