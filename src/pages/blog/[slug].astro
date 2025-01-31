@@ -38,7 +38,7 @@ const Content = await post.html;
   seoImage={`${import.meta.env.SITE}/og/${post.slug}.png`}
 >
   <div class="">
-    <article class="prose dark:prose-invert max-w-none">
+    <article class="prose prose-invert max-w-none">
       <div class="text-3xl font-bold mb-4">{post.title}</div>
       <Fragment set:html={post.html} />
     </article>
