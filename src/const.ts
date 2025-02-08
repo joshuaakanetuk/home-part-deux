@@ -44,7 +44,7 @@ export const PRODUCTS = [
       "React",
       "Browser Extension",
       "Javascript",
-      "Notion API (API Integration)",
+      "Notion API",
     ],
   },
 ];
