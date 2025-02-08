@@ -23,9 +23,9 @@ jobs:
           echo "GHOST_CMS_URL: ${{ vars.GHOST_CMS_URL }}"
           echo "CONTENT_KEY_API is set: ${{ secrets.CONTENT_KEY_API != '' }}"
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install, build, and upload your site
-        uses: withastro/action@v1
+        uses: withastro/action@v3
         env:
           GHOST_CMS_URL: ${{ vars.GHOST_CMS_URL }}
           CONTENT_KEY_API: ${{ secrets.CONTENT_KEY_API }}
@@ -44,4 +44,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
