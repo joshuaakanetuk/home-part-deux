@@ -49,6 +49,11 @@ const { title, description, pageType, seoImage, pageURL, publishedTime, tags, au
         imageAlt: "Preview image for" + title,
       }}
     />
+    <script
+      defer
+      data-domain="joshuaakanetuk.com"
+      src="https://plausible.trymanager.co/js/script.js"
+    ></script>
   </head><body>
     <div class="h-full text-white flex flex-col px-8 md:px-16 lg:px-32 gap-4">
       <!-- Header -->
@@ -66,11 +71,6 @@ const { title, description, pageType, seoImage, pageURL, publishedTime, tags, au
       </header>
       <slot />
     </div>
-    <script
-      defer
-      data-domain="joshuaakanetuk.com"
-      src="https://plausible.trymanager.co/js/script.js"
-    ></script>
     <Footer />
     <style>
       * {
